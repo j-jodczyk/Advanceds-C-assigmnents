@@ -1,0 +1,13 @@
+cmake_minimum_required(VERSION 3.12)
+
+add_executable(TestA_two_args_same_type TestA_two_args_same_type.cpp testasserts.hpp)
+target_link_libraries(TestA_two_args_same_type PRIVATE measureTime)
+add_test(NAME TestA_two_args_same_type COMMAND TestA_two_args_same_type)
+
+add_executable(TestB_two_args_any_types TestB_two_args_any_types.cpp testasserts.hpp)
+target_link_libraries(TestB_two_args_any_types PRIVATE measureTime)
+add_test(NAME TestB_two_args_any_types COMMAND TestB_two_args_any_types)
+
+add_executable(TestC_any_args_any_types TestC_any_args_any_types.cpp testasserts.hpp)
+target_link_libraries(TestC_any_args_any_types PRIVATE measureTime)
+add_test(NAME TestC_any_args_any_types COMMAND TestC_any_args_any_types)

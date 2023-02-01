@@ -1,0 +1,17 @@
+cmake_minimum_required(VERSION 3.12)
+
+add_executable(TestA_SMF_and_get TestA_SMF_and_get.cpp testasserts.hpp)
+target_link_libraries(TestA_SMF_and_get PRIVATE UniquePtr)
+add_test(NAME TestA_SMF_and_get COMMAND TestA_SMF_and_get)
+
+add_executable(TestB_assign_reset_release TestB_assign_reset_release.cpp testasserts.hpp)
+target_link_libraries(TestB_assign_reset_release PRIVATE UniquePtr)
+add_test(NAME TestB_assign_reset_release COMMAND TestB_assign_reset_release)
+
+add_executable(TestC_compare TestC_compare.cpp testasserts.hpp)
+target_link_libraries(TestC_compare PRIVATE UniquePtr)
+add_test(NAME TestC_compare COMMAND TestC_compare)
+
+add_executable(TestD_custom_deleter TestD_custom_deleter.cpp testasserts.hpp)
+target_link_libraries(TestD_custom_deleter PRIVATE UniquePtr)
+add_test(NAME TestD_custom_deleter COMMAND TestD_custom_deleter)

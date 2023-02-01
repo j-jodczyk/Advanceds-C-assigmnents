@@ -1,0 +1,13 @@
+cmake_minimum_required(VERSION 3.12)
+
+add_executable(TestA_destructor TestA_destructor.cpp testasserts.hpp)
+target_link_libraries(TestA_destructor PRIVATE Vector)
+add_test(NAME TestA_destructor COMMAND TestA_destructor)
+
+add_executable(TestB_copyConstructor TestB_copyConstructor.cpp testasserts.hpp)
+target_link_libraries(TestB_copyConstructor PRIVATE Vector)
+add_test(NAME TestB_copyConstructor COMMAND TestB_copyConstructor)
+
+add_executable(TestC_moveConstructor TestC_moveConstructor.cpp testasserts.hpp)
+target_link_libraries(TestC_moveConstructor PRIVATE Vector)
+add_test(NAME TestC_moveConstructor COMMAND TestC_moveConstructor)
